@@ -66,9 +66,26 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      margin: -300px -150px;
-      width: 300px;
+      margin: -300px -250px;
+      width: 500px;
       height: 590px;
+    }
+    
+    .left, .right {
+      width: 250px;
+      float: left;
+    }
+    
+    .right {
+      float: right;
+      text-align: right;
+    }
+    
+    .right h2 {
+      margin: 20px 0 0 0;
+    }
+    .right div {
+      margin: 5px 0 5px 0;
     }
   </style>
   
@@ -121,22 +138,35 @@
 </head>
 <body id="body" onload="ready()">
   <div class="content">
-    <h1>Development<sup>*</sup></h1>
-    <h2><a href="mailto:dmitry@krasnoukhov.com">dmitry@krasnoukhov.com</a></h2>
-    <h2>+38 (066) 126 02 22</h2>
-    
-    <h3 class="s"><img src="/img/7.png" align="absmiddle"><a href="mailto:dmitry@krasnoukhov.com">Gtalk</a></h3>
-    <h3><img src="/img/8.png" align="absmiddle"><a href="skype:romantik.ua">Skype</a></h3>
-    <h3><img src="/img/1.png" align="absmiddle"><a href="http://twitter.com/krasnoukhov">Twitter</a></h3>
-    <h3><img src="/img/2.png" align="absmiddle"><a href="http://facebook.com/krasnoukhov">Facebook</a></h3>
-    <h3><img src="/img/3.png" align="absmiddle"><a href="http://www.lastfm.ru/user/romanteg">Last.fm</a></h3>
-    <h3><img src="/img/12.png" align="absmiddle" width="16"><a href="http://foursquare.com/krasnoukhov">Foursquare</a></h3>
-    <h3><img src="/img/9.png" align="absmiddle" width="16"><a href="http://romantik.habrahabr.ru/">Habrahabr</a></h3>
-    <h3><img src="/img/11.png" align="absmiddle" width="16"><a href="http://theoldreader.com/profile/krasnoukhov">The Old Reader</a></h3>
-    <h3><img src="/img/10.png" align="absmiddle" width="16"><a href="http://github.com/krasnoukhov">Github</a></h3>
-    <h3><img src="/img/6.png" align="absmiddle"><a href="http://vkontakte.ru/krasnoukhov">Vkontakte</a></h3>
-    
-    <h4><sup>*</sup>Ruby on Rails, Coffeescript/Javascript, iOS</h4>
+    <div class="left">
+      <h1>Development<sup>*</sup></h1>
+      <h2><a href="mailto:dmitry@krasnoukhov.com">dmitry@krasnoukhov.com</a></h2>
+      <h2>+38 (066) 126 02 22</h2>
+      
+      <h3 class="s"><img src="/img/7.png" align="absmiddle"><a href="mailto:dmitry@krasnoukhov.com">Gtalk</a></h3>
+      <h3><img src="/img/8.png" align="absmiddle"><a href="skype:romantik.ua">Skype</a></h3>
+      <h3><img src="/img/1.png" align="absmiddle"><a href="http://twitter.com/krasnoukhov">Twitter</a></h3>
+      <h3><img src="/img/2.png" align="absmiddle"><a href="http://facebook.com/krasnoukhov">Facebook</a></h3>
+      <h3><img src="/img/3.png" align="absmiddle"><a href="http://www.lastfm.ru/user/romanteg">Last.fm</a></h3>
+      <h3><img src="/img/12.png" align="absmiddle" width="16"><a href="http://foursquare.com/krasnoukhov">Foursquare</a></h3>
+      <h3><img src="/img/9.png" align="absmiddle" width="16"><a href="http://romantik.habrahabr.ru/">Habrahabr</a></h3>
+      <h3><img src="/img/11.png" align="absmiddle" width="16"><a href="http://theoldreader.com/profile/krasnoukhov">The Old Reader</a></h3>
+      <h3><img src="/img/10.png" align="absmiddle" width="16"><a href="http://github.com/krasnoukhov">Github</a></h3>
+      <h3><img src="/img/6.png" align="absmiddle"><a href="http://vkontakte.ru/krasnoukhov">Vkontakte</a></h3>
+      
+      <h4><sup>*</sup>Ruby on Rails, Coffeescript/Javascript, iOS</h4>
+    </div>
+    <div class="right">
+      <h1>Recent projects</h1>
+      
+      <h2>The Old Reader</h2>
+      <div><a href="http://theoldreader.com/" target="_blank"><img src="/img/projects/tor.png" alt="The Old Reader" /></a></div>
+      <a href="http://theoldreader.com/" target="_blank">theoldreader.com</a>
+      
+      <h2>Tweephone</h2>
+      <div><a href="http://www.youtube.com/watch?v=Y25F2yhlerc" target="_blank"><img src="http://img.youtube.com/vi/Y25F2yhlerc/1.jpg" alt="Tweephone" /></a></div>
+      <a href="http://www.youtube.com/watch?v=Y25F2yhlerc" target="_blank">youtube.com</a>
+    </div>
   </div>
   
   <script type="text/javascript">
