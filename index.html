@@ -1,0 +1,155 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Dmitry Krasnoukhov</title>
+  
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-control" content="no-cache, proxy-revalidate, must-revalidate" />
+  
+  <meta name="Description" content="Development: Ruby on Rails, Coffeescript/Javascript, iOS" />
+  <meta name="Keywords" content="Dmitry Krasnoukhov, Дмитрий Красноухов, Ruby on Rails, Coffeescript, Javascript, iOS" />
+  <meta name="Author" content="Dmitry Krasnoukhov (krasnoukhov.com)" />
+  <meta name="Robots" content="index,follow" />
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <style type="text/css">
+    @font-face {
+      font-family: 'MyriadProCondensed';
+      src: url('/fonts/MyriadPro-Cond.eot');
+      src: local('Myriad Pro Condensed'), local('MyriadPro-Cond'), url('/fonts/MyriadPro-Cond.woff') format('woff'), url('/fonts/MyriadPro-Cond.otf') format('opentype'), url('/fonts/MyriadPro-Cond.svg#MyriadPro-Cond') format('svg');
+    }  
+    
+    body {
+      background: #fff;
+      font-family: 'MyriadProCondensed',Tahoma;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    
+    h1, h2, h3, h4, a {
+      color: #000;
+      font-weight: normal;
+    }
+    
+    h1 {
+      margin-bottom: 20px;
+      font-size: 35px;
+    }
+    
+    h2 {
+      font-size: 25px;
+    }
+    
+    h3 {
+      font-size: 20px;
+      margin: 10px 0px 10px 0px;
+    }
+    
+    h3 img {
+      margin-right: 7px;
+      padding-bottom: 5px;
+    }
+    
+    h3.s {
+      margin-top: 10px;
+    }
+    
+    h4 {
+      margin-top: 20px;
+      color: #999;
+    }
+    
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -300px -150px;
+      width: 300px;
+      height: 590px;
+    }
+  </style>
+  
+  <script type="text/javascript">
+    var konami = {
+      input: "",
+      clear: setTimeout('konami.clear_input()',1000),
+      load: function(link) {
+        window.document.onkeyup = function(e) {
+          konami.input += e ? e.keyCode : event.keyCode
+          if(konami.input == "7368688168") {
+            konami.code(link)
+            clearTimeout(konami.clear)
+          }
+          clearTimeout(konami.clear)
+          konami.clear = setTimeout("konami.clear_input()",1000)
+        }
+      },
+      clear_input: function() {
+        konami.input = "";
+        clearTimeout(konami.clear);
+      }
+    }
+    
+    function $_(elem) {
+      return document.getElementById(elem);
+    }
+    
+    function ready() {
+      konami.code = function(){
+        var im = new Image();
+        im.id = 'up4k';
+        im.src = '/img/up4k.gif';
+        im.style.position = 'absolute';
+        im.style.bottom = '0px';
+        im.style.left = '10px';
+        im.title = 'Go-go-go work with me!';
+        
+        if($_('up4k') == null) {
+          $_('body').appendChild(im);
+        }else{
+          $_('body').removeChild($_('up4k'));
+        }
+      }
+      
+      konami.load();
+    }
+    
+  </script>
+</head>
+<body id="body" onload="ready()">
+  <div class="content">
+    <h1>Development<sup>*</sup></h1>
+    <h2><a href="mailto:dmitry@krasnoukhov.com">dmitry@krasnoukhov.com</a></h2>
+    <h2>+38 (066) 126 02 22</h2>
+    
+    <h3 class="s"><img src="/img/7.png" align="absmiddle"><a href="mailto:dmitry@krasnoukhov.com">Gtalk</a></h3>
+    <h3><img src="/img/8.png" align="absmiddle"><a href="skype:romantik.ua">Skype</a></h3>
+    <h3><img src="/img/1.png" align="absmiddle"><a href="http://twitter.com/krasnoukhov">Twitter</a></h3>
+    <h3><img src="/img/2.png" align="absmiddle"><a href="http://facebook.com/krasnoukhov">Facebook</a></h3>
+    <h3><img src="/img/3.png" align="absmiddle"><a href="http://www.lastfm.ru/user/romanteg">Last.fm</a></h3>
+    <h3><img src="/img/12.png" align="absmiddle" width="16"><a href="http://foursquare.com/krasnoukhov">Foursquare</a></h3>
+    <h3><img src="/img/9.png" align="absmiddle" width="16"><a href="http://romantik.habrahabr.ru/">Habrahabr</a></h3>
+    <h3><img src="/img/11.png" align="absmiddle" width="16"><a href="http://theoldreader.com/profile/krasnoukhov">The Old Reader</a></h3>
+    <h3><img src="/img/10.png" align="absmiddle" width="16"><a href="http://github.com/krasnoukhov">Github</a></h3>
+    <h3><img src="/img/6.png" align="absmiddle"><a href="http://vkontakte.ru/krasnoukhov">Vkontakte</a></h3>
+    
+    <h4><sup>*</sup>Ruby on Rails, Coffeescript/Javascript, iOS</h4>
+  </div>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9475550-1']);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    
+  </script>
+</body>
+</html>

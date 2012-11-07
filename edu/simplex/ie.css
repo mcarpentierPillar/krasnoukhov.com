@@ -1,0 +1,13 @@
+/* form layout */
+.form dt {
+	width: 60px;
+}
+
+	.form dt.l {
+		text-align: left;
+		width: 290px;
+	}
+
+.form dd {
+	width: 100px;
+}

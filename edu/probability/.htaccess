@@ -1,0 +1,3 @@
+DirectoryIndex index.php
+Options +Indexes
+php_value error_reporting 6135

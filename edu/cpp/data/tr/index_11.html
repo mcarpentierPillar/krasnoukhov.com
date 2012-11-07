@@ -1,0 +1,1791 @@
+
+<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.53cm; line-height: 100%">
+<FONT COLOR="#17365d"><FONT FACE="Times New Roman, serif"><FONT SIZE=6 STYLE="font-size: 28pt">Функції
+(2)</FONT></FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Глобальні
+	та локальні змінні. Операція видимості.</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	Під час оголошення змінних в оперативній
+	пам’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>яті</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	комп’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ютера</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	резервується місце для зберігання
+	їхніх значень. Обсяг наданої пам’яті
+	залежить від типів змінної та компілятора.
+	Кожна змінна характеризується областю
+	дії та областю видимості. </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>Область
+	дії</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	– це частина програми, де змінна придатна
+	для повноцінного опрацювання. </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>Область
+	видимості</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	– це частина програми, де змінна
+	оголошується або, де до неї можна
+	отримати доступ за допомогою операції
+	надання видимості, що позначається
+	&quot;::&quot;. Змінні можна оголошувати у
+	блоці команд, у тілі деякої функції або
+	поза всіма функціями (глобальні змінні).
+	Області дії та можливої видимості, час
+	дії змінної у певній програмі залежать
+	від того, де і як оголошені змінні.</SPAN></FONT></FONT></P>
+</OL>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Змінні,
+які оголошені у тілі деякої функції або
+у блоці, називаються </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>локальними</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.
+Область дії локальних змінних поширюється
+лише на відповідну функцію чи блок. Під
+час виходу із функції (блока) частина
+оперативної пам’яті, відведеної під
+локальні змінні, вивільняється, тобто
+закінчується область дії змінної. Тому
+у різних функціях можна використовувати
+змінні з однаковими іменами.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+1.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+Скласти програму з використанням
+функції, яка знаходить максимальне
+серед трьох введених чисел.</SPAN></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>#</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">iostream</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&gt;
+			                 </SPAN></FONT></FONT>
+			</P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>#include
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;conio.h&gt;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			Max(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float,
+			float, float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">);</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+			                   // Оголошення функції </I></SPAN></FONT></FONT>
+			</P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>void</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">main</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">()</SPAN></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">clrscr</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">();</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">max</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">1,
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">2,
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">3;
+			                         </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Оголошення змінних</I></SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;&lt;
+			“</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Уведіть
+			три числа</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>\</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			&gt;&gt; </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1
+			&gt;&gt; </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2
+			&gt;&gt; </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>3;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">max</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			= </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Max</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1,
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2,
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>3);
+			     </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Обчислюємо максимальне серед уведених
+			чисел</I></SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			&lt;&lt; “\</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			Максимальне серед чисел ”&lt;&lt; </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1
+			&lt;&lt; “, ” &lt;&lt; </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2
+			&lt;&lt; “, “ &lt;&lt; </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>3;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			&lt;&lt; “ є” &lt;&lt; </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">max</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">getch</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>();</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2.75cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>//-------------------------------------------------------------------------------------------</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2.75cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Max</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">a</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>,
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">b</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>,
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">c</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>)
+			          </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Опис функції Max</I></SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">max;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(a
+			&gt; b &amp;&amp; a &gt;c) max = a;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>else</B></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 5cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(b
+			&gt; a &amp;&amp; b &gt;c) max = b;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 6cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>else
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">max
+			= c;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>return
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">max;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Зауважимо,
+що у цій програмі змінна </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">max</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+оголошена відразу у двох функціях </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">max</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">()
+і М</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">ax</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">().</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Змінні,
+які описані поза всіма функціями, тобто
+на початку програми або у файлі заголовка,
+називаються </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>глобальними</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.
+Вони видимі та доступні під час виконання
+всієї програми. До таких змінних можна
+звертатись з будь-якої функції чи блока.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Функція
+може повертати значення у основну
+програму за допомогою команди </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>return</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+вказівників, посилань або через глобальні
+змінні. Значення глобальних змінних
+можна змінювати у тілі функцій. З огляду
+на це у великій програмі важко
+проаналізувати значення глобальної
+змінної на певному етапі її виконання.
+Тому варто якомога менше використовувати
+глобальні змінні, бо це ускладнює
+розуміння програми.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Деяка змінна
+може бути доступною, але в певний момент
+невидимою. Наприклад, якщо глобальна
+та локальна змінні мають однакове ім’я,
+то глобальна змінна у області дії
+відповідної локальної змінної буде
+невидимою. Тобто локальна змінна в
+області своєї визначеності перекриває
+дію глобальної змінної. Для того, щоб
+звернутись (доступитись) до глобальної
+змінної у деякому блоці чи функції,
+використовують операцію надання
+видимості ::. У цьому випадку до імені
+змінної зліва дописують два символи
+двокрапки. Наприклад, ::prybutok, ::day тощо.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+2.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+Відомо, що потяг проїхав 5 (</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>k</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">)
+станцій зі сталою швидкістю </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>v</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+км/год. Час, затрачений на переїзд між
+станціями, та швидкість потягу треба
+ввести з клавіатури у режимі діалогу.
+Використовуючи функцію, визначити
+загальний шлях, який пройшов потяг, і
+відстані між станціями.</SPAN></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>#</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">iostream</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&gt;
+			                                    </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Про локальні та глобальні змінні </I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			                  </SPAN></FONT></FONT>
+			</P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>#</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">conio</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&gt;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">d
+			= 0;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+			                                                     // Оголошення
+			глобальної змінної d </I></SPAN></FONT></FONT>
+			</P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>void</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">main</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">()</SPAN></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">k
+			= 5; </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			v, t;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			&lt;&lt; “</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Уведіть
+			швидкість потягу </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">\n”;
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&gt;&gt;
+			v;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>for
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n
+			= 1; n &lt;= k; n++)</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			&lt;&lt; “\</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			Уведіть час, який затратив потяг”;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			&lt;&lt; “</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			на переїзд між зупинками </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”
+			&lt;&lt; </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			&lt;&lt; “</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			та </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">”
+			&lt;&lt; (n+1) &lt;&lt; “\n”;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			&gt;&gt; t;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">d</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>;
+			                                 </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Оголошення локальної змінної d</I></SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">d</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			= </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">t</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			* </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">v</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			&lt;&lt; “Відстань від станції ” &lt;&lt; </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			&lt;&lt; “ до ”</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			                    <FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;&lt;
+			(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+1</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">)</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			&lt;&lt; “</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			є </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”
+			&lt;&lt; </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">d</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			&lt;&lt; “км”;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>::</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">d</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			= ::</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">d</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			+ </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">d</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>;
+			                          </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Звертання до глобальної змінної</I></SPAN></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			&lt;&lt; “\</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			Загальний шлях ”&lt;&lt; </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">d</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			&lt;&lt; “ км ”;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">У
+цьому випадку змінна </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>d</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+яка оголошена на початку програми, є
+глобальною. У блоці команди </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>for</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+оголошена локальна змінна </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>d</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Зауваження
+1.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+Для динамічних змінних не діють правила
+видимості та доступності. Динамічні
+змінні видимі та доступні у всіх функціях
+та блоках програми протягом усього часу
+їх визначеності.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<OL START=2>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Класи
+	пам’яті.</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	Для того, щоб безпосередньо вказати
+	комп’ютеру як і де у його пам’яті мають
+	зберігатися значення змінних чи функцій,
+	як можна отримати доступ до цих даних,
+	як визначити область видимості цих
+	даних, використовують </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>специфікатори
+	класу пам’яті.</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	Є п’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">ять</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	специфікаторів (табл. 9).</SPAN></FONT></FONT></P>
+</OL>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=260>
+	<COL WIDTH=261>
+	<COL WIDTH=261>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Клас
+			пам’</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>яті</B></SPAN></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Час дії
+			змінної</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Області
+			видимості та дії змінної</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>auto</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Тимчасова</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Локальна</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>register</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Тимчасова</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Локальна</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>extern</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Тимчасова</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Локальна</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>static</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Постійна</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Локальна</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>static</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Постійна</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глобальна</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>volatile</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Постійна </FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=261>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глобальна</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+          <FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Розглянемо
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">дії
+цих специфікаторів.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Специфікатор
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>auto</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+для локальних змінних застосовується
+за замовчуванням, тому зазначати його
+не обов’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>язково</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.
+Область видимості таких змінних обмежена
+блоком, у якому вони оголошені. Під час
+виходу з блока пам’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ять,
+яка відведена</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+для цих змінних, автоматично вивільняється,
+а змінні знищуються.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Специфікатор
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>register</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+вказує компілятору, що значення змінної
+слід зберігати у регістрах. Це зменшує
+час доступу до змінної і прискорює
+виконання програми. Якщо не можливо
+розмістити змінну у регістрі, то змінна
+буде збережена зі специфікатором </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>auto</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+обмежені блоком, у якому вони оголошені.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Специфікатор
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>static</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+можна застосовувати як до локальних,
+так і до глобальних змінних. На відміну
+від змінних зі специфікаторами </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>auto</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+та </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>register</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+значення локальної статичної змінної
+зберігається після виходу з блока чи
+функції, де ця змінна оголошена. Під час
+повторного виклику функції змінна
+зберігає своє попереднє значення. Якщо
+змінна явно не ініціалізована, то за
+замовчуванням їй надається значення
+0.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+3.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+Обчислити суму або добуток перших </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>п</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+цілих додатних чисел.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Обчислимо
+спочатку суму чисел.</FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>// Обчислення
+			суми</I></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>#</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">iostream</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&gt;
+			                                                     </SPAN></FONT></FONT>
+			</P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>#</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">conio</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&gt;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">cc(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n)</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+			                                                    </I></SPAN></FONT></FONT>
+			</P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>void</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">main</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">()</SPAN></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>clrscr();</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n,
+			S;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;
+			“</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Уведіть
+			число</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">”;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			&gt;&gt; n;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>for</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			i = 1; i &lt;= n; i++) S = cc(i);</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			&lt;&lt; S;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>getch();</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>//---------------------------------------------------------------------</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">cc(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			n)</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			                                                </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Цей рядок буде виконано лише один раз</I></SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>static</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">S</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			= 0;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			                        </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			під час першого виклику функції</I></SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>S += n;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>return
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">S;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>} </FONT></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Функція
+сс призначена для обчислення суми чисел.
+Якщо ж потрібно обчислити добуток чисел,
+то </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>функція
+main() залишиться без змін</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+а замість функції сс слід записати таку
+функцію:</SPAN></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">cc(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			n)</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">{</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			                                                </SPAN></FONT></FONT>
+			</P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>static
+			int </B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">S
+			= </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">1</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			                        </SPAN></FONT></FONT>
+			</P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">S
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">*</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">=
+			n;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>return
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">S;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глобальні
+статичні змінні ініціалізуються під
+час запуску програми. Області їх дії та
+видимості розповсюджуються лише на той
+файл, де оголошена ця змінна.</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Часто,
+якщо програма складається з декількох
+файлів, виникає потреба передавати
+значення змінних з одного файлу в інший.
+У такому випадку до змінної застосовують
+специфікатор </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>extern</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.
+Він дає змогу оголошувати глобальні
+змінні, дія яких поширюється на всі
+файли, з яких складається програма.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Специфікатор
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>volatile</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+застосовують до глобальних змінних,
+значення яких можуть надходити від
+периферійних пристроїв, наприклад, якщо
+змінна набуває значення від системного
+таймера.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<OL START=3>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Перевантаження
+	функцій.</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	У мові С++ допускається використовувати
+	одне і те саме ім’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>я</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	функції для різних наборів аргументів.
+	Це називається </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>перевантаженням
+	функцій,</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	або </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>поліморфізмом</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.
+	Перевантаження використовують, коли
+	необхідно викликати функцію з аргументами
+	різних типів, або коли функція залежить
+	від різної кількості аргументів. У
+	таких випадках необхідно кожну функцію
+	оголосити й описати окремо. Під час її
+	виклику компілятор автоматично
+	проаналізує сигнатури та виконає коди
+	відповідної функції.</SPAN></FONT></FONT></P>
+</OL>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+4.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+Використовуючи перевантаження функції,
+скласти програму для упорядкування
+трьох уведених даних або символьного,
+або цілого типу.</SPAN></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>#</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">iostream</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&gt;
+			                                                     </SPAN></FONT></FONT>
+			</P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>void
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Sort(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			n1, </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			n2, </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			n3);</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>void
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Sort(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>char</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			n1,</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>
+			char</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			n2, </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>char</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			n3);</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>void
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">main()</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">i1,
+			i2, i3, k;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>char</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">c</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1,
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">c</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2,
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">c</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>3;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			&lt;&lt; “</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Уведіть
+			1 для впорядкування символів, 2 – для
+			чисел</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>\</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt;&gt;
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">k</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">k</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			== 1)</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			&lt;&lt; “</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Уведіть
+			три символи</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&gt;&gt;
+			c1 &gt;&gt; c2 &gt;&gt;c3;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Sort(c1, c2, c3);</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">k</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			== 2)</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;&lt;
+			“</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Уведіть
+			три числа</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			&gt;&gt; i1 &gt;&gt; i2 &gt;&gt; i3;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Sort(i1, i2, i3);</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>//---------------------------------------------------------------------------</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>void
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Sort(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			n1, </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			n2, </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			n3)</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3.5cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3.5cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">c;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3.5cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(n1
+			&gt; n2) {c = n1; n1 = n2; n2 = c;}</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3.5cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(n2
+			&gt; n3) {c = n2; n2 = n3; n3 = c;}</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3.5cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(n1
+			&gt; n2) {c = n1; n1 = n2; n2 = c;}</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3.5cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;
+			n1 &lt;&lt; “\t” &lt;&lt; n2 &lt;&lt; “\t” &lt;&lt; n3;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3.5cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Зауваження
+2</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>.
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Для
+функцій, які відрізняються типом
+значення, яке вони повертають, і мають
+однаковий набір аргументів, перевантаження
+у мові С++ не визначено, тобто їм надавати
+однакові імена </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>не
+можна.</I></SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<OL START=4>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Шаблони
+	функцій.</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	Перевантаження функцій, описане у
+	попередньому пункті, часто буває
+	корисним, але не завжди зручним. Як
+	видно, один і той самий програмний код
+	довелося записувати окремо для змінних
+	символьного типу, а потім для цілих
+	чисел. У мові С++ є змога уникнути таке
+	дублювання за допомогою шаблонів.
+	</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Шаблон
+	функції </B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">–
+	це опис функції, яка залежить від даних
+	довільного типу. Крім того, така функція
+	може повертати в основну програму
+	результат довільного типу. Тобто
+	користувач створює сигнатуру й описує
+	функцію з аргументами деякого загального
+	типу. Під час виклику такої функції
+	компілятор автоматично проаналізує
+	тип фактичних аргументів, згенерує для
+	них програмний код і виконає відповідні
+	дії. Це називається неявним створенням
+	</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>екземпляра
+	шаблона.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	Такий підхід у програмуванні називається
+	</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>узагальненим
+	програмуванням,</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	оскільки він дає змогу створити функцію
+	узагальненого типу.</SPAN></FONT></FONT></P>
+</OL>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Сигнатуру
+шаблону функції можна описати так:</FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>template</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>class</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;назва
+			узагальненого типу&gt;&gt;</SPAN></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;тип
+			функції&gt; &lt;назва функції&gt;(&lt;список
+			формальних параметрів&gt;);</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>У списку
+формальних параметрів замість стандартних
+конкретних типів даних зазначають назву
+узагальненого типу. Правила для описування
+шаблона функції такі самі, як і для
+функції користувача.</FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Зауваження
+3.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">У
+стандарті ISO/ANSI замість ключового слова
+class прийнято записувати typename.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Якщо
+для деякого типу даних функцію необхідно
+описати окремо, то створюють </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>явну
+специфікацію</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+функції. Тоді у списках формальних
+параметрів шаблона зазначають конкретні
+типи аргументів.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+5</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>.</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+Переробимо програму з прикладу 4 для
+упорядкування трьох введених даних
+заздалегідь невідомого типу, використовуючи
+шаблони.</SPAN></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>#</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">iostream</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&gt;
+			                                                     </SPAN></FONT></FONT>
+			</P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>#</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">conio</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&gt;</SPAN></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>// Оголошення
+			шаблона функції</I></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>template</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>class</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Mytype&gt;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>void
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Sort(Mytype
+			n1,</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Mytype
+			n2, Mytype n3);</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>void
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">main()</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>clrscr();</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">i1,
+			i2, i3, k;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>char</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">c</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1,
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">c</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2,
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">c</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>3;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			&lt;&lt; “</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Уведіть
+			1 для впорядкування символів, 2 – для
+			чисел</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>\</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt;&gt;
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">k</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">k</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			== 1)</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			&lt;&lt; “</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Уведіть
+			три символи</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&gt;&gt;
+			c1 &gt;&gt; c2 &gt;&gt;c3;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Sort(c1, c2, c3);</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">k</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			== 2)</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;&lt;
+			“</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Уведіть
+			три числа</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			&gt;&gt; i1 &gt;&gt; i2 &gt;&gt; i3;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Sort(i1, i2, i3);</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>getch();</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>//--------------------------------------------------------------------------------</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>template</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>class</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Mytype&gt;
+			                                   </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Опис шаблона функції</I></SPAN></FONT></FONT></P>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>void
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Sort(Mytype
+			n1, Mytype n2, Mytype n3)</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2.5cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2.75cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Mytype</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">c;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2.75cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(n1
+			&gt; n2)</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3.25cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{c = n1; n1 = n2;
+			n2 = c;}</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2.75cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(n2
+			&gt; n3)</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3.25cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{c = n2; n2 = n3;
+			n3 = c;}</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2.75cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(n1
+			&gt; n2)</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3.5cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{c = n1; n1 = n2;
+			n2 = c;}</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2.75cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;
+			n1 &lt;&lt; “\t” &lt;&lt; n2 &lt;&lt; “\t” &lt;&lt; n3;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2.75cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">}
+			</SPAN></FONT></FONT>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<OL START=5>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Вбудовані
+	функції.</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	Під час виконання програми генеруються
+	коди для всіх функцій користувача. Коли
+	відбувається звертання до тієї чи іншої
+	функції, здійснюється виклик відповідного
+	коду. Якщо до деякої функції звертаються
+	багато разів, то робота програми
+	сповільнюється. Щоб цього уникнути,
+	можна використовувати так звані
+	вбудовані функції. Коди таких функцій
+	вставляються компілятором у кожну
+	точку виклику в основному коді. Це ви
+	вимагає додаткового обсягу оперативної
+	пам’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>яті,
+	проте прискорює процес виконання
+	програми. </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Щоб
+	створити вбудовану функцію, потрібно
+	до її оголошення додати ключове слово
+	</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>inline</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>.</B></FONT></FONT></P>
+</OL>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+6.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Використовуючи
+вбудовані функції, скласти програму
+для обчислення добутку</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<IMG SRC="./data/tr/index_html_1ec8248.gif" NAME="Графический объект53" ALIGN=BOTTOM WIDTH=88 HEIGHT=67 BORDER=0></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Використання
+функції тут має ілюстративний характер.</FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>#</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">iostream</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&gt;
+			                                                     </SPAN></FONT></FONT>
+			</P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>#define
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">N
+			10</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>inline
+			float </B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">dob(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			a);</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>void
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">main()</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">D;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>for
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			k = 1; k &lt;= N; k++) D = dob(k);</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout
+			&lt;&lt; </B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">“</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Добуток
+			дорівнює = </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">”</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			&lt;&lt; D;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>//-------------------------------------------------------------------------</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">dob(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			a)</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>static
+			float </B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">d
+			= 1;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>d = d * (5 * a +
+			2) / (a – 15);</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>return</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			d;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Виконавши
+програму, одержимо значення добутку
+28380,5.</FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<OL START=6>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Функція
+	main() з параметрами. </B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Функція,
+	яка має бути у кожній програмі, - це
+	функція main(). Досі вона використовувалась
+	без параметрів: main(). Як і інші функції,
+	ця функція може мати аргументи. Вони
+	називаються </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>аргументами
+	командного рядка. </I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Їх
+	зазначають під час запуску програми
+	(ехе-файлу) у командному рядку операційної
+	системи.</SPAN></FONT></FONT></P>
+</OL>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Загальний
+вигляд функції main такий:</FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">main(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">argc,
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>char
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">*argv,
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>char
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">*env[])</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">де
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">argc</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+– число аргументів функції + 1 (назва
+програми теж вважається аргументом),
+які задають у командному рядку. Параметр
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">argv</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+– це вказівник на масив символьного
+типу. Параметр </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">env</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>[]</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+служить для передачі параметрів для
+операційної системи, у якій виконується
+програма. Його використовують, наприклад,
+тоді, коли програму потрібно виконати
+в різних операційних системах.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+7.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+Нехай треба знайти мінімальне або
+максимальне значення функції </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+<IMG SRC="./data/tr/index_html_m55f333ee.gif" NAME="Графический объект54" ALIGN=ABSMIDDLE WIDTH=98 HEIGHT=26 BORDER=0></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+де </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>х
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+змінюється на проміжку [1; 2] з кроком </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>h</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+= 0,1.</SPAN></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>#</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">iostream</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&gt;
+			                       //</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+			Використання функції </I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>main</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>()
+			з параметрами</I></SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>#</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">conio.h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&gt;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>#</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			&lt;process.h&gt;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>#</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;math.h&gt;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>#define</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			h 0.1</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>#define</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			b 2</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Min(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">y);
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Max(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">y);</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">main(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">argc,
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>char
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">*argv[])</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">argc</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			&lt; 2)                                 </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Якщо параметр не задано</I></SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;&lt;
+			“</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Недостатньо
+			аргументів</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>\</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;&lt;
+			“</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Уведіть
+			параметр min та max</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">exit</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			(1);                                  </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Достроково виходимо з програми</I></SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>,
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">y</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;&lt;
+			“</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">X</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			\ </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">t</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Y</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			\ </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;
+			                    // </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>Табулюємо
+			функцію</I></SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>for
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(x
+			= 1; x &lt;= b; x += h)</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>y = x * x
+			*sin(x);</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;
+			x &lt;&lt;”\t” &lt;&lt; y &lt;&lt; “\n”;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			                                              <FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Перевіримо, чи другий параметр є min</I></SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(*argv[1]
+			== ‘m’ &amp;&amp; *(argv[1]+1) = ‘i’ &amp;&amp;
+			*(argv[1]+2) == ‘n’)</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;
+			“Min = ” &lt;&lt; Min(y);</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>else</B></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			                                            <FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>//
+			Перевіримо, чи другий параметр є max</I></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(*argv[1]
+			== ‘m’ &amp;&amp; *(argv[1]+1) = ‘a’ &amp;&amp;
+			*(argv[1]+2) == ‘x’)</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;&lt;
+			“</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Max</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			= ” &lt;&lt; </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Max</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">y</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>);</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>else</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			   </B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;&lt;
+			“</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Параметр
+			не визначено</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">getch();
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>return
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">0;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>//-----------------------------------------------------------------------------------------------------------</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Min(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">y)</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x
+			= 1, m;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>m = x * x *
+			sin(x);</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>for</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(
+			; x &lt;= 2; x +=h)</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>y = x * x *
+			sin(x);</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(m
+			&gt; y) m = y;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 4cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>return
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">m;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>//----------------------------------------------------------------</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float
+			 </B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x
+			= 1, m;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>m = x * x
+			*sin(x);</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>for
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(
+			; x &lt;= 2; x += h)</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>y = x * x *
+			sin(x);</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>if</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			(m &lt; y) m = y;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>return
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">m;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+  <FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">З
+бібліотеки </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">process</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+використано функцію </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">exit</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+(</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">),
+яка дає змогу достроково завершити
+виконання програми.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<TABLE WIDTH=740 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=30>
+	<COL WIDTH=251>
+	<COL WIDTH=200>
+	<COL WIDTH=61>
+	<COL WIDTH=116>
+	<TR VALIGN=TOP>
+		<TD WIDTH=30 HEIGHT=27>
+			<P LANG="uk-UA" CLASS="western">№</P>
+		</TD>
+		<TD WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Завдання</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Варіанти
+			відповіді</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>В-дь</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Де
+			знайти</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=30 HEIGHT=5>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Яка
+			з областей змінної не існує?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>обл.
+			дії</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ст.61</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>обл.
+			доступності</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>обл.
+			видимості</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=2 WIDTH=30 HEIGHT=14>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Яка
+			область дії локальної змінної?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>вся
+			програма</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ст.61</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>відповідна
+			функція чи блок</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=2 WIDTH=30 HEIGHT=20>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>3.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Яка
+			область дії глобальної функції?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>вся
+			програма</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ст.62</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>відповідна
+			функція чи блок</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=30 HEIGHT=5>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>4.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Час
+			дії змінної якого класу є тимчасовим?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>auto</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">ст.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">63</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>extern</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>static</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=30 HEIGHT=9>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>5.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Коли
+			виникає поліморфізм?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>при
+			виклику функцій з аргументами різних
+			типів</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ст.65</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>функція
+			залежить від різної кількості аргументів</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>і
+			те, і інше</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=30 HEIGHT=13>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>6.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Яка
+			команда записується в шаблоні функції?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>template</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">ст.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">67</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>explicit</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>typedef</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=30 HEIGHT=7>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>7.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Яке
+			ключове слово потрібно додати до
+			оголошення, щоб створити вбудовану
+			функцію?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>class</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">ст.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">68</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>inline</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>friend</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=30 HEIGHT=8>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>8.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Який
+			з аргументів командного рядка не
+			входить до функфії main?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>int
+			arg c</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">ст.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">69</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>char
+			*arhv</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>int
+			*env[]</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>

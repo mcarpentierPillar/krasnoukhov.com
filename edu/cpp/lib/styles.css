@@ -1,0 +1,149 @@
+.clear {
+	clear: both;
+}
+
+body {
+	margin: 20px 0px 0px 0px;
+}
+
+a,p {
+	color: #000;
+}
+
+#wrapper {
+	width: 900px;
+	margin: 0 auto;
+	font-family: Tahoma;
+}
+
+#header{
+	border-bottom: 1px solid #999;
+}
+
+#header h1 a {
+	text-decoration: none;
+}
+
+#content {
+	min-height: 100px;
+	padding: 0px 0px 30px 0px;
+}
+
+#footer {
+	border-top: 1px solid #999;
+}
+
+#content .col1, #content .col2 {
+	width: 43%;
+	min-height: 100px;
+	float: left;
+	margin-top: 30px;
+	padding: 0px 30px 0px 30px;
+}
+
+#content .col1 {
+	border-right: 1px solid #999;
+}
+
+#content ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+#content ol {
+	margin: 0px 0px 0px 20px;
+	font-size: 13px;
+}
+
+#content ol li, #content ul li {
+	padding: 5px;
+}
+
+#content ul li a, #content ol li a {
+	font-size: 13px;
+}
+
+#content ol li a.s {
+	color: #999;
+}
+
+#content h1 {
+	font-size: 130%;
+}
+
+#content h2 {
+	font-weight: normal;
+	font-size: 120%;
+}
+
+#content h3 {
+	font-weight: normal;
+	font-size: 100%;
+	margin-left: 20px;
+}
+
+#content li h3 a {
+	color: #999;
+}
+
+#content h2 ol {
+	display: block;
+	margin-top: 10px;
+	margin-left: 50px;
+}
+
+#content h2 ol li a {
+	font-size: 15px;
+}
+
+#content h2 ol li{
+	font-size: 15px;
+}
+
+#content h2 ul {
+	margin-top: 10px;
+}
+
+#content h2 ul li a {
+	font-size: 15px;
+}
+
+#content h2 ul li{
+	display: block;
+	float: left;
+	padding: 20px;
+	font-size: 15px;
+}
+
+#content h2 span {
+	font-weight: bold;
+}
+
+#content .info {
+	border-bottom: 1px solid #999;
+}
+
+#content input {
+	font-size: 16px;
+}
+
+#back {
+	position: absolute;
+	overflow: auto;
+	z-index: 9;
+	width: 96%;
+	height: 20px;
+	bottom: 0px;
+	left: 0px;
+	text-align: center;
+	padding: 5px;
+	background: #fff;
+	border: 1px solid #999;
+}
+
+@media screen {
+	body>div#back {
+		position: fixed;
+	}
+}

@@ -1,0 +1,993 @@
+<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.53cm; line-height: 100%">
+<FONT COLOR="#17365d"><FONT FACE="Times New Roman, serif"><FONT SIZE=6 STYLE="font-size: 28pt">Типи
+даних</FONT></FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Типи
+	даних. </B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Усі
+	дані, які беруть участь у розв’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>язанні</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	задач, ретельно класифікуються за
+	типами. Тип визначає допустимі значення
+	даного, операції, які можна над ним
+	виконувати, й обсяг оперативної пам’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>яті</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+	який резервується для нього.</SPAN></FONT></FONT></P>
+</OL>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Зауваження
+1. </B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Обсяг
+може залежати також від різновиду
+операційної системи комп’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ютера</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Визначити,
+який обсяг пам’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>яті</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+компілятор надає даному того чи іншого
+типу, можна за допомогою команди
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I><B>sizeof</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>(&lt;</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>назва
+типу</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>&gt;</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>).</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+Наприклад, команда </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I><B>cout</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I><B>&lt;&lt;</B></I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I><B>sizeof</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>(</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>short</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>int</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>)</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+виведе</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+на екран монітора цифру 2. Це означає,
+що дане типу </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>short</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">займає
+у пам’яті комп’ютера 2 байти.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>У табл. 1, 2
+наведені назви основних числових типів,
+обсяги пам’яті, які резервуються для
+екземплярів даних цих типів, і діапазони
+допустимих значень даних.</FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Числові дані
+поділяють на цілочисельні (цілі) та
+дійсні.</FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<OL START=2>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Цілі
+	типи.</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	Цілі типи описані в табл. 1.</SPAN></FONT></FONT></P>
+</OL>
+<P LANG="uk-UA" ALIGN=RIGHT STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>Таблиця 1.
+Дані цілочисельних типів</I></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=260>
+	<COL WIDTH=167>
+	<COL WIDTH=356>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Назва
+			типу</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=167>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Обсяг,
+			байтів</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=356>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Діапазон
+			допустимих значень</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>I</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>nt</B></SPAN></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=167>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2 або 4</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=356>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>-32768 … 32767
+			або</FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>-2147483648 …
+			2147483647</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>short int</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=167>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=356>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>-32768 … 32767</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>unsigned short
+			int</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=167>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2 або 4</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=356>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>0 … 65535 або</FONT></FONT></P>
+			<P ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">0
+			… 4294967295</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>long int</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=167>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>4</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=356>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>-2147483648 …
+			2147483647</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>unsigned long
+			int</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=167>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>4</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=356>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>0 … 4294967295</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+           
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+1.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Оголосимо
+три змінні цілого типу:</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+x, y; </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>short
+int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+z;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">На
+етапі компіляції для змінних </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>x</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>,
+</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>y</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>,
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>z</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+буде надано певний обсяг оперативної 
+пам’яті.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Надати
+значення цим змінним можна на етапі
+виконання програми за допомогою команд
+присвоєння, наприклад, так:  </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">x</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+= 157</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>,
+</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">y</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+= -68, </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">z</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+= 15;. У ділянку пам’яті, надану для змінної
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>х</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+буде занесено число 157, для </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>y</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+-  </I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">-68</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>,
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">а
+для </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>z</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+– 15.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Під
+час виконання програми значення змінних
+можна змінювати. Наприклад, команда
+присвоєння х = 2003 занесе у відповідну
+для змінної </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>х</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+ділянку пам’яті число 2003 (попереднє
+значення 157 вилучається автоматично).</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+2</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>.
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Сталі
+цілого типу можна оголосити так:</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>const
+int </B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">a
+= 145;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>const
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>long
+int </B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">b
+= 365978.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Значення
+даних </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>a</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">та</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>b</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">у
+програмі змінювати не можна.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<OL START=3>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Дійсні
+	типи.</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	Дійсні типи описані в табл. 2.</SPAN></FONT></FONT></P>
+</OL>
+<P ALIGN=RIGHT STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+  <FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>Таблиця
+2. Дійсні типи</I></SPAN></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=260>
+	<COL WIDTH=189>
+	<COL WIDTH=334>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Назва
+			типу</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=189>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Обсяг,
+			байтів</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=334>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Діапазон
+			значень</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>F</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>loat</B></SPAN></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=189>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>4</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=334>
+			<P ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">±</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><IMG SRC="./data/tr/index_html_m710bb5ef.gif" NAME="Графический объект2" ALIGN=ABSMIDDLE WIDTH=71 HEIGHT=26 BORDER=0></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">…
+			±</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><IMG SRC="./data/tr/index_html_76863d16.gif" NAME="Графический объект3" ALIGN=ABSMIDDLE WIDTH=61 HEIGHT=26 BORDER=0></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">;
+			0</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>D</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ouble</B></SPAN></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=189>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>8</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=334>
+			<P ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">±</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><IMG SRC="./data/tr/index_html_54608388.gif" NAME="Графический объект4" ALIGN=ABSMIDDLE WIDTH=78 HEIGHT=26 BORDER=0></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			… ±</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><IMG SRC="./data/tr/index_html_m4ff392b0.gif" NAME="Графический объект5" ALIGN=ABSMIDDLE WIDTH=69 HEIGHT=26 BORDER=0></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">;
+			0</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=260>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>long double</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=189>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>10</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=334>
+			<P ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">±</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><IMG SRC="./data/tr/index_html_76fd1634.gif" NAME="Графический объект6" ALIGN=ABSMIDDLE WIDTH=96 HEIGHT=26 BORDER=0></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			… ±</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><IMG SRC="./data/tr/index_html_m423d243c.gif" NAME="Графический объект7" ALIGN=ABSMIDDLE WIDTH=86 HEIGHT=26 BORDER=0></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">;
+			0</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Зауваження
+2. </B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">У
+десяткових числах ціла і дробова частини
+числа відокремлюються крапкою.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+3.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Розглянемо
+фрагмент програми</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>,
+</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">pi</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+= 3.1415926; </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>double</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">v</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+= 365.976;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>const</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">w</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+= -12, </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+= 23.4;</FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Тут
+оголошено дві змінні (</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>h</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">pi</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">)
+типу </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+і змінну </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>v</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+типу </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>double</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+а також сталі </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">w</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+= -12, </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+= 23.4 типу </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Дійсні
+числа можна записувати у форматі з
+фіксованою крапкою, наприклад -2.3, 5.0041,
+або у </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>науковому
+форматі</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+(у форматі з рухомою крапкою), наприклад,
+-0.2е+2 (це є число - 20), 3.27е-3 (це є 0,00327).</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Запис
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>п</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">е
+± </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>т</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+означає множення числа </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>п</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+на 10 у степені ± </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>т</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+тобто за означенням</SPAN></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">e
+			± </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>m</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			= </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>n</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			× </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			<IMG SRC="./data/tr/index_html_1490c270.gif" NAME="Графический объект8" ALIGN=ABSMIDDLE WIDTH=44 HEIGHT=26 BORDER=0></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Знак
+«+» можна не зазначати, знак «-»  писати
+обов’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>язково</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<OL START=4>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Символьний
+	тип (</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>char</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>).
+	</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Символьний
+	тип – це множина символів кодової
+	таблиці комп’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ютера</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	ASCII. </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Символьна
+	стала </B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">–
+	це </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>один
+	</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">символ
+	(1 байт), узятий у лапки на зразок
+	апострофа, або число у 8-, 10- чи 16-й системі
+	числення, яке є кодом символу у таблиці
+	ASCII.</SPAN></FONT></FONT></P>
+</OL>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>4.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+Розглянемо описи символьних змінних,
+де змінним m1</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>,
+</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">m</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2,
+</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">m</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>3
+і </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">m</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>4</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+надамо значення латинської літери ´А´
+чотирма способами:</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>char
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">m1
+= ‘A’, m2 = 0101, m3 = 65, m4 = 0x41;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Число
+65 – це десятковий код символу </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>‘</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">A</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>’</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+101 – вісімко вий, 41 – шістнадцятко вий.
+На початку останніх двох кодів (101, 41)
+записують префікс «0» чи «0х» відповідно.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+5.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+Розглянемо спосіб визначення десяткового
+ASCII-коду деякого символу, наприклад </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>‘</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">A</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>’</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">:</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>char
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">c
+= ‘A’; </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+n = c;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Змінна
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+набуде значення 65.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<OL START=5>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Логічний
+	тип (</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>bool</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>).
+	</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Логічний
+	тип характеризується двома значеннями
+	даних: false (хибність) і true (істина).
+	Наприклад, </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>bool</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">b</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	= </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">true</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.
+	Змінні цього типу займають 1 байт у
+	пам’яті комп’ютера. У С++ значення
+	змінних типу </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+	</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">можна
+	асоціювати з логічними значеннями:
+	нулю відповідає значення false, усім іншим
+	числам – true.</SPAN></FONT></FONT></P>
+</OL>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Зауважимо,
+що не всі компілятори підтримують тип
+даних </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>bool</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.
+Тому, перед тим як його використовувати,
+варто з’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ясувати</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+можливості компілятора.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<OL START=6>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Службове
+	слово void. </B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Службове
+	слово </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>void</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	дописують до назв функцій, які не
+	повертають значення у точку виклику
+	або до функцій без параметрів.</SPAN></FONT></FONT></P>
+</OL>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<OL START=7>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Типи
+	користувача.</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	Крім вище описаних стандартних типів
+	даних, можна створювати </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>типи
+	користувача</B></SPAN></FONT></FONT></P>
+</OL>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>typedef</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+			</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">опис
+			типу</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt;
+			&lt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">назва
+			нового типу</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">;</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="uk-UA" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+ 
+</P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+6</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>.
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Опишемо
+тип </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">kilkist</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+для</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">позначення
+коротких цілих даних без знаку:</SPAN></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>typedef
+unsigned short int </B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">kilkist;</SPAN></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Змінні
+(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">kil</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">1,
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">kil</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">2)
+цього типу у програмі можна оголосити
+так: </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">kilkist</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">kil</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">1,
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">kil</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">2;</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+ 
+</P>
+<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<TABLE WIDTH=746 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=36>
+	<COL WIDTH=251>
+	<COL WIDTH=200>
+	<COL WIDTH=61>
+	<COL WIDTH=116>
+	<TR VALIGN=TOP>
+		<TD WIDTH=36 HEIGHT=27>
+			<P LANG="uk-UA" CLASS="western">№</P>
+		</TD>
+		<TD WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Завдання</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Варіанти
+			відповіді</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>В-дь</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=116>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Де
+			знайти</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=36 HEIGHT=5>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Виберіть
+			правильне оголошення команди, що
+			визначає обсяг пам’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>яті
+			типу.</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>sizeon(&lt;назва
+			типу&gt;)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ст.10</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">sizeof(</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">назва
+			типу)</SPAN></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">sizeof(&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">назва
+			типу</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&gt;)</SPAN></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=36 HEIGHT=14>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Виберіть
+			правильний обсяг пам’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>яті
+			цілого типу</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			int.</SPAN></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2
+			байти</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ст.10</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>4
+			байти</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2
+			або 4 байт</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=36 HEIGHT=20>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>3.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Виберіть
+			неправильну назву типу.</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>short
+			int</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">ст.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">10-11</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>short
+			double</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>long
+			int</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=36 HEIGHT=5>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>4.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Виберіть
+			правильний обсяг пам’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>яті
+			</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">дійсного</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+			типу </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">float</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>4
+			або 8 байт</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ст.11</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>4
+			байти</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>8
+			байт</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=36 HEIGHT=9>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>5.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Назвіть
+			число різновидів назв цілого типу.</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>3</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ст.10</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>5</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>6</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=36 HEIGHT=13>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>6.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Виберіть
+			правильний обсяг пам’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">яті
+			дійсного типу long double.</SPAN></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>8</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ст.11</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>12</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>10</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=36 HEIGHT=7>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>7.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Яке
+			з оголошень є помилковим?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>const
+			int a = 45;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ст.10-11</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>short
+			int b = 89675;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>long
+			int g = 125436574;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=36 HEIGHT=9>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>8.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Виберіть
+			помилкове надання значення типу.</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>char
+			f = ‘A’;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">ст.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">12</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>char
+			name[20];</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>char
+			d = “B”;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=36 HEIGHT=7>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>9.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Якими
+			значеннями даних характеризується
+			логічний тип?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>yes,
+			no</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">ст.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">12</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>false,
+			true</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>in,
+			out</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=36 HEIGHT=1>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>10.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>За
+			допомогою якої команди можна створити
+			тип користувача?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>#include</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=116>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">ст.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">12</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>typename</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>typedef</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="uk-UA" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+  
+</P>
+<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><BR><BR>
+</P>
+<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><BR><BR>
+</P>
+<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><BR><BR>
+</P>

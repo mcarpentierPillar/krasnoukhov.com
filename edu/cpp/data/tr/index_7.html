@@ -1,0 +1,990 @@
+
+<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.53cm; line-height: 100%">
+<FONT COLOR="#17365d"><FONT FACE="Times New Roman, serif"><FONT SIZE=6 STYLE="font-size: 28pt">Файли</FONT></FONT></FONT></P>
+<P LANG="uk-UA" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Часто виникає
+потреба опрацьовувати інформацію,
+розміщену на зовнішніх носіях (на
+дисках), або виводити результати програми
+не на екран монітора, а у файл. Прикладами
+таких даних є інформація про розклад
+руху транспорту, успішність студентів,
+наявність товарів у магазинах, адреси,
+анкетні дані тощо.</FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Файл
+</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">–
+це сукупність даних, які розміщені на
+зовнішньому носії, зокрема, на жорсткому
+диску. Дані у файлі називаються елементами.
+Кількість даних під час опрацювання
+файлів не зазначають. Файли можуть
+містити як текстову, так і числову
+інформацію.</SPAN></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Існує
+декілька бібліотечних функцій, які
+дають змогу зчитувати інформацію з
+файлу або спрямовувати потік виведення
+у файл. Функції, які розглядатимемо,
+описані в бібліотеці </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">fstream</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.
+Тому для роботи за файлами насамперед
+необхідно підключити саме цю бібліотеку.</SPAN></FONT></FONT></P>
+<P CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Зауваження1.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+У модулі </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">fstream</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+також містяться описи стандартних
+потоків </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">і</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.
+Тому, щоб зчитати інформацію з файлу і
+вивести її на екран монітора, модуль
+iostream.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+підключати не обов’язково.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" CLASS="western" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Для опрацювання
+файлу його необхідно відкрити, виконати
+потрібні дії та закрити.</FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Зчитування
+	даних із файлу.</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	Щоб зчитати вхідні дані з файлу, необхідно
+	оголосити файлову змінну та відкрити
+	файл для читання так (розглянемо два
+	способи):</SPAN></FONT></FONT></P>
+</OL>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>і</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>fstream</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			&lt;назва файлової змінної&gt;(&lt;зовнішня
+			назва&gt;, ознака1 |ознака2| … | ознакаN);</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+ <FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">або
+так:</SPAN></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>і</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>fstream</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			&lt;назва файлової змінної&gt;; &lt;назва
+			файлової змінної&gt;.open(&lt;зовнішня
+			назва&gt;);</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>Дія
+команд.</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+Підключаємо потік введення даних із
+файлу та налагоджуємо зв’зок між
+файловою змінною у програмі та файлом
+на зовнішньому носії. Назву зовнішнього
+файлу треба записувати у лапках. Ознаки
+слугують для визначення прав доступу
+до файлу. Ознаки зазначати необов’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>язково.</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+У випадку, коли їх задавати не потрібно,
+наведені дві форми запису тотожні, і
+можна обирати одну з них.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+1.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+Відкрити зовнішній файл MyText.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">txt</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+для</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+читання з нього даних можна так:</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ifstream
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">MyFile(“MyText.txt”);</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>або так:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ifstream
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">MyFile;
+MyFile.open(“MyText.txt”);</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Тут
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">MyFile</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+– це файлова змінна, що асоціюється у
+програмі з відповідним зовнішнім файлом
+на диску. Введення даних виконують
+командою введення &gt;&gt;. Наприклад,
+команда</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">MyFile</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+&gt;&gt; text;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">зчитає
+одне дане з початку файлу </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">MyText</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">txt</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+до першого пропуску чи до символу &quot;кінець
+рядка&quot; у змінну </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">txt</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.
+Якщо треба зчитати наступне дане (яке
+розміщене між першим і другим пропусками),
+необхідно повторити попередню команду,
+тобто записати команди </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">MyFile</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+&gt;&gt; text; </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">MyFile</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+&gt;&gt; text1; або використати команду </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">MyFile</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+&gt;&gt; text &gt;&gt; text1;.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Отже, зчитати
+дані з файлу можна за допомогою команди:</FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;назва
+			файлової змінної&gt; &gt;&gt; &lt;змінна 1&gt;
+			&gt;&gt; &lt;змінна 2&gt; &gt;&gt; … &gt;&gt; &lt;змінна
+			N&gt;</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+ <FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Після
+опрацювання файлу його потрібно закрити.
+Це роблять так:</SPAN></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;назва
+			файлової змінної&gt;.close()</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+ <FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Наприклад,
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">MyFile</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.close().
+Файл </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">MyText</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">txt</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+буде закрито.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Після
+цього файлову змінну </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">MyFile</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+у разі потреби можна зв’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>язати</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+з іншим файлом на диску.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Визначити
+кінець файлу можна за допомогою функції
+eof() (</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">eof</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+– </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>end</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>of</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>file</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+кінець файлу) так:</SPAN></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;назва
+			файлової змінної&gt;.eof()</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Ця функція
+повертає нульове значення, якщо досягнуто
+кінця файлу.</FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+2.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Нехай
+у деякому текстовому редакторі створено
+файли text1.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">dat</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+та text2.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">dat</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.
+послідовно зчитаємо з них дані та
+виведемо їх уміст на екран.</SPAN></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=399>
+	<COL WIDTH=400>
+	<TR VALIGN=TOP>
+		<TD WIDTH=399>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>#include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			&lt;fstream.h&gt;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>void
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">main()</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ifstr</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>eam
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">File1(“text1.dat”);</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>while
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(!File1.eof())</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<BR>
+			</P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>char
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">*t
+			= </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>new
+			char</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">[30];</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>File1 &gt;&gt; t;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;
+			t &lt;&lt; “\n”;</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>delete</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">[]
+			t;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<BR>
+			</P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>File1.close();</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">File1.open(“</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">text2.dat”);</SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>while
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">(!File1.eof())</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>char
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">*t
+			= </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>new
+			char</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">[30];</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>File1 &gt;&gt; t;</FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;
+			t &lt;&lt; “\n”;</SPAN></FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>delete[] t;</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>File1.close();</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+			<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm">
+			<BR>
+			</P>
+		</TD>
+		<TD WIDTH=400>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>// Виведення
+			інформації із файлів</I></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<BR>
+			</P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<BR>
+			</P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Поки не досягнуто кінця файлу </I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>text1.dat</I></SPAN></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>// Знак !
+			означає операцію не</I></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Надаємо місце в пам’</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>яті</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+			для зчитуваного //даного</I></SPAN></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//до
+			30</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>
+			</I></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>символів</I></SPAN></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>// Зчитуємо
+			дане з файлу</I></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>// Виводимо
+			це дане на екран</I></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Вивільняємо пам’</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>ять</I></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<BR>
+			</P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>//
+			Повертаємось на початок команди while</I></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>// коли
+			досягнуто кінця файлу, закриваємо
+			його</I></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+			Відкриваємо файл </I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>text</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>2.</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><I>dat</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+			для читання </I></SPAN></FONT></FONT>
+			</P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>// Поки не
+			досягнуто кінця файлу</I></FONT></FONT></P>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">  
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<OL START=2>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Виведення
+	даних у файл.</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+	Відкрити файл для записування у нього
+	даних можна так:</SPAN></FONT></FONT></P>
+</OL>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ofstrem</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;назва
+			файлової змінної&gt;(&lt;зовнішня назва&gt;,
+			ознака1 | ознака2 | … </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">|</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			ознака</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+			N)</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+ <FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">або
+так:</SPAN></FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ofstrem</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+			</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">&lt;назва
+			файлової змінної&gt;;</SPAN></FONT></FONT></P>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;назва
+			файлової змінної&gt;.open(&lt;зовнішня
+			назва&gt;);</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+  <FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>Дія
+команд. </I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Підключаємо
+потік виведення у файл і налагоджуємо
+зв’язок між файловою змінною у програмі
+та файлом на зовнішньому носії. Ознаки
+зазначати не обов’</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>язково.</FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+3.</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Відкрити
+файл MyText1.txt для запису у нього даних
+можна так (тут FileForZap – файлова змінна):</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ofstream
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">FileForZap(“MyText1.txt”);</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>або так:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ifstream
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">FileForZap;
+FileForZap.open(“MyText1.txt”);</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Щоб</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">занести
+дані у файл, використовують команду
+виведення даних &lt;&lt;. Наприклад, після
+виконання команд</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>int</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+= 10;   </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">FileForZap</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+&lt;&lt; </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">у
+файл </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">MyText</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">1.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">txt</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+буде занесено число 10. Занести декілька
+даних у файл можна так само, як і вивести
+їх на екран: використовуючи стандартні
+правила команди &lt;&lt; та керуючі
+послідовності.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Отже, записати
+дані у файл можна так:</FONT></FONT></P>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=815>
+	<TR>
+		<TD WIDTH=815 VALIGN=TOP>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;назва
+			файлової змінної&gt; &lt;&lt; &lt;змінна 1&gt;
+			&lt;&lt; &lt;змінна 2&gt; &lt;&lt; … &lt;&lt; &lt;змінна
+			N&gt;</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<OL START=3>
+	<LI><P ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+	<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>Ознаки.
+	</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Ознаки
+	слугують для зміни правил доступу до
+	файлу. Розглянемо деякі з них:</SPAN></FONT></FONT></P>
+</OL>
+<TABLE WIDTH=833 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0>
+	<COL WIDTH=210>
+	<COL WIDTH=589>
+	<TR VALIGN=TOP>
+		<TD WIDTH=210>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Ознака</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=589>
+			<P LANG="uk-UA" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Призначення</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=210>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>ios::in</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=589>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Відкриває
+			файл для читання з нього інформації.
+			Вміст файлу зберігається.</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=210>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>ios::out</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=589>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Відкриває
+			файл для записування інформації. Якщо
+			файл не існує, то буде створений</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=210>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>ios::app</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=589>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Відкриває
+			файл для дописування інформації. Дані
+			будуть записані у кінець файлу</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=210>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>ios::trunk</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=589>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Якщо файл,
+			який відкривають для записування вже
+			існує, то його вміст буде вилучено</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=210>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>ios::nocreate</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=589>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Забороняє
+			створювати файл, який відкривають</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=210>
+			<P LANG="en-US" ALIGN=CENTER STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>ios::noreplace</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=589>
+			<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm">
+			<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Забороняє
+			перезаписувати існуючий файл</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Приклад
+4</B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>.</I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+Після оголошення</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ofstream
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Flags(“text1.dat”,
+ios::app, ios::noreplace);</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">можна
+дописати до кінця вже існуючого файлу
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">text1.dat</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+потрібну інформацію. Якщо ж оголосити
+потік </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Flags</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+так:</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ofstream</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Flags</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">(“</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">text</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">1.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">dat</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">”,
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">ios</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">::</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">noreplace</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">);</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">і
+спробувати щось записати у файл, то
+жодних дій не відбудеться, оскільки
+ознака </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">ios</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">::</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">noreplace</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+забороняє змінювати існуючий файл.
+Проте якщо цю ознаку застосувати до
+нового файлу, якого ще немає на диску,
+наприклад, записати</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ofstream</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Flags</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">(“</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">text</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">3.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">dat</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">”,
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">ios</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">::</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">noreplace</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">);</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">то
+буде створено файл </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">text</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">3.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">dat</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">,
+в який можна буде заносити дані.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Якщо потік
+оголосити так:</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ofstream</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">Flags</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">(“</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">text</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">4.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">dat</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">”,
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">ios</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">::</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">nocreate</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">);</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">то
+можливі два варіанти. Якщо файл </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">text</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">4.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">dat</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+вже існує, то він може бути відкритий
+для записування даних. Якщо ж раніше
+такого файлу на диску не було, то в
+кращому випадку у файл нічого не
+запишеться, а в гіршому – програма
+зависне.</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I><B>Задача
+1 </B></I></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><B>(про
+змагання спортсменів)</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">.
+Нехай необхідно занести у файл прізвища
+та результати трьох переможців змагань
+із фігурного катання. Вивести вміст
+файлу на екран для візуального контролю.</SPAN></FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>// Програма
+Спорт</I></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>#</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>include</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+&lt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">fstream</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>.</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">h</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+</SPAN></FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 2cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>void</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>
+</B></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">main</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>()</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>{</FONT></FONT></P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><I>// Відкриємо
+файл для записування</I></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ofstream
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">File1(“sport.txt”);</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>char</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+name[15];</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>float</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">bal</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+&lt;&lt; “</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Уведіть
+прізвище та результат першого
+спортсмена</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>\</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+&gt;&gt; name &gt;&gt; bal;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">File1
+&lt;&lt; name &lt;&lt; “\t” &lt;&lt; bal &lt;&lt; “\n”;    
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+Записуємо дані у файл</I></SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+&lt;&lt; “</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Уведіть
+прізвище та результат другого
+спортсмена</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>\</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+&gt;&gt; name &gt;&gt; bal;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">File1
+&lt;&lt; name &lt;&lt; “\t” &lt;&lt; bal &lt;&lt; “\n”;    
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+Записуємо дані у файл</I></SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+&lt;&lt; “</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Уведіть
+прізвище та результат третього
+спортсмена</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>\</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">n</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>”;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cin</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+&gt;&gt; name &gt;&gt; bal;</SPAN></FONT></FONT></P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>File1 &lt;&lt; name
+&lt;&lt; “\t” &lt;&lt; bal &lt;&lt; “\n”;     </FONT></FONT>
+</P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">File</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">1.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">close</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">();
+                                             //</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>
+Закриваємо файл</I></SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+&lt;&lt; “Виведемо вміст файлу\n”;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>ifstream
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">File2(“sport.txt”);</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+&lt;&lt; “</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Перше
+місце\t</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">”;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">File2
+&gt;&gt; name &gt;&gt; bal;                               </SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA"><I>//
+Зчитуємо дані з файла</I></SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;
+name &lt;&lt; “\t” &lt;&lt; bal &lt;&lt; “\n”;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+&lt;&lt; “</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Друге
+місце</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">
+</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">\t</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">”;</SPAN></FONT></FONT></P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>File2 &gt;&gt; name
+&gt;&gt; bal;</FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;
+name &lt;&lt; “\t” &lt;&lt; bal &lt;&lt; “\n”;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;
+“</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Третє
+місце \t</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">”;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">File2
+&gt;&gt; name &gt;&gt; bal;</SPAN></FONT></FONT></P>
+<P ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><B>cout
+</B></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;
+name &lt;&lt; “\t” &lt;&lt; bal &lt;&lt; “\n”;</SPAN></FONT></FONT></P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=4>}</FONT></FONT></P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<TABLE WIDTH=746 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=8 CELLSPACING=0 FRAME=ABOVE>
+	<COL WIDTH=37>
+	<COL WIDTH=251>
+	<COL WIDTH=200>
+	<COL WIDTH=61>
+	<COL WIDTH=117>
+	<TR VALIGN=TOP>
+		<TD WIDTH=37 HEIGHT=27>
+			<P LANG="uk-UA" CLASS="western">№</P>
+		</TD>
+		<TD WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Завдання</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Варіанти
+			відповіді</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>В-дь</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=117>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Де
+			знайти</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=37 HEIGHT=5>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>1.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>В
+			якій бібліотеці збурігаються функції
+			для роботи з файлами?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>iostream.h</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=117>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">ст.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">31</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ifstream.h</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>fstream.h</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=37 HEIGHT=14>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>2.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>За
+			допомогою якої команди можна зчитати
+			дані з файлу?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">назва
+			ф. змінної</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&gt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&gt;&gt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">змінна</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&gt;</SPAN></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=117>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ст.33</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;назва
+			ф. </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">змінної</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">змінна</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;змінна&gt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt;&gt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">назва
+			ф. змінної</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=37 HEIGHT=20>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>3.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>За
+			допомогою якої команди можна записати
+			дані у файл?</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;змінна&gt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">назва
+			ф. змінної</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=117>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">ст.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">33</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;назва
+			ф. </FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">змінної</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&lt;</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">змінна</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt;</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">назва
+			ф. змінної</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&gt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&gt;&gt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">
+			</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&lt;</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">змінна</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">&gt;</SPAN></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=37 HEIGHT=5>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>4.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Яка
+			ознака відкриває файл для читання з
+			нього інформації? (Вміст файлу
+			зберігається)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ios::out</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=117>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">ст.</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US">33-34</SPAN></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ios::app</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ios::in</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="en-US" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD ROWSPAN=3 WIDTH=37 HEIGHT=9>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>5.</FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=251>
+			<P CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">Яке
+			призначення ознаки io</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="uk-UA">s::nocreate?</SPAN></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Забороняє
+			перезаписати існуючий файл</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+		<TD ROWSPAN=3 WIDTH=117>
+			<P LANG="uk-UA" CLASS="western" STYLE="margin-bottom: 0.35cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Глинський,</FONT></FONT></P>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>ст.34</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Забороняє
+			створювати файл, який відкривають</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>+</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=200>
+			<P LANG="uk-UA" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT SIZE=4>Дозволяє
+			перезаписувати існуючий файл</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=61>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=5 WIDTH=730 HEIGHT=69 VALIGN=TOP>
+			<P LANG="uk-UA" CLASS="western"><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-left: 1cm; margin-right: 1cm; text-indent: 3cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>
+<P LANG="uk-UA" ALIGN=JUSTIFY STYLE="margin-right: 1cm; margin-bottom: 0.35cm; line-height: 100%">
+<BR><BR>
+</P>

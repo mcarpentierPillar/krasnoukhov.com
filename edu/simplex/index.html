@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru_RU">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-control" content="no-cache, proxy-revalidate, must-revalidate" />
+
+	<title>Симплекс метод</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="scripts.js"></script>
+	<script type="text/javascript" src="examples.js"></script>
+	
+	<style type="text/css">
+		@import "styles.css";
+	</style>
+	<!--[if lte IE 7]>
+		<link href="ie.css" rel="stylesheet" type="text/css">
+	<![endif]-->
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1>Симплекс метод<sup>beta</sup></h1>
+			<p>Знаходження екстремума функції за допомогою симплекс метода</p>
+			
+			<div class="rgt">
+				<a href="#help">Допомога</a>
+			</div>
+		</div>
+		<div id="content">
+			<div class="side-left">
+				<h3>Введення даних</h3>
+				<input type="radio" name="f[t]" value="1" checked> min
+				<input type="radio" name="f[t]" value="2"> max
+				<br /><br />
+				
+				j = <input type="text" name="f[j]" value="2">
+				<input type="button" name="f[jm]" value="-">
+				<input type="button" name="f[jp]" value="+">
+								
+				<dl class="form function">
+				</dl>
+
+				<h3>Обмеження</h3>
+				k = <input type="text" name="f[k]" value="1">
+				<input type="button" name="f[km]" value="-">
+				<input type="button" name="f[kp]" value="+">
+
+				<dl class="form restrictions">
+				</dl>
+
+				<h3>Параметри</h3>				
+				<div class="sys">
+					<ins class="t"></ins><ins class="b"></ins>
+					
+					<input type="checkbox" name="f[n]" value="1"> x<sub>j</sub> ∈ N<br />
+					<input type="checkbox" name="f[o]" value="1"> x<sub>j</sub> ≥ 0
+				</div>
+				<br />
+
+				<input type="checkbox" name="f[c]" value="1" checked> перераховувати декілька разів<br />
+				<input type="button" name="f[calc]" value="Розрахувати">
+			</div>
+			<div class="side-right">
+				<h3>Приклади</h3>
+				<input type="button" name="f[example]" value="Приклад 1" n="1">
+				<input type="button" name="f[example]" value="Приклад 2" n="2">
+				<input type="button" name="f[example]" value="Приклад 3" n="3">
+
+				<br />
+				<input type="button" name="f[example]" value="Приклад siniy" n="4">
+				<input type="button" name="f[example]" value="Приклад lev" n="5">
+				<input type="button" name="f[example]" value="Приклад web" n="6">
+
+				<h3>Введені дані</h3>
+				
+				<div id="inserted">
+					Наразі немає даних
+				</div>
+			</div>
+			<div class="clear"></div>			
+		</div>
+
+		<div class="result">
+			<h3>Рішення</h3>
+			<div id="result">
+				Наразі немає даних
+			</div>
+		</div>
+	</div>	
+
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		try {
+		var pageTracker = _gat._getTracker("UA-9475550-1");
+		pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+</body>

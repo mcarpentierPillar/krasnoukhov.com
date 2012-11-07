@@ -1,0 +1,19 @@
+<div class="col1">
+	<ul id="prs">
+		<script type="text/javascript">
+			for(var i=1;i<=settings.prs;i++) {
+				$('#prs').append('<li><a href="#pr/'+i+'">Практична робота №'+i+'</a></li>');
+			}
+		</script>
+	</ul>
+</div>
+<div class="col2">
+	<ol id="trs">
+		<script type="text/javascript">
+			for(i in trs) {
+				$('#trs').append('<li><a href="#tr/'+i+'">'+trs[i].title+'</a>. <a class="s" href="#ts/'+i+'">Тест</a></li>');
+			}
+		</script>
+	</ol>
+</div>
+<div class="clear"></div>
