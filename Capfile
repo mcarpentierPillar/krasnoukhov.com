@@ -16,6 +16,7 @@ set   :branch, "master"
 set   :repository_cache, "git"
 set   :deploy_via, :remote_cache
 set   :user, "krasnoukhov"
+set   :git_enable_submodules, 1
 
 # Options
 set   :use_sudo, false

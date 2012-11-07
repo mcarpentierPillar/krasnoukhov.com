@@ -1,0 +1,3 @@
+[submodule "other/check"]
+	path = other/check
+	url = git@github.com:krasnoukhov/checkboxart.git
