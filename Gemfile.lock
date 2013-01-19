@@ -9,6 +9,7 @@ GEM
       net-ssh-gateway (>= 1.1.0)
     capistrano_colors (0.5.5)
     highline (1.6.15)
+    json (1.7.6)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -16,6 +17,8 @@ GEM
     net-ssh (2.6.1)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
+    powify (0.8.5)
+      json
 
 PLATFORMS
   ruby
@@ -23,3 +26,4 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   capistrano_colors
+  powify
