@@ -21,3 +21,6 @@ set   :git_enable_submodules, 1
 # Options
 set   :use_sudo, false
 set   :keep_releases, 1
+
+# Hooks
+after "deploy:update", "deploy:cleanup"
